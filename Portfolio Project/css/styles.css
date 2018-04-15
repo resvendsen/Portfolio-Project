@@ -1,0 +1,257 @@
+/* -------  GENERAL  ------- */
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 100%;
+  margin: 3%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p {
+  margin: 0;
+}
+
+
+/* -------  OVERALL GRID DEFINITION  ------- */
+/* -------  TOP LEVEL  ------- */
+
+.grid-header {
+  grid-area: header;
+  max-height: 14vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin: 0 0 3% 1%;
+}
+
+ .grid-main {
+  grid-area: main;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-right: 0;
+}
+
+.grid-footer-title {
+  grid-area: footertitle;
+}
+
+.grid-footer {
+  grid-area: footer;
+}
+
+.body-container {
+  grid-template-columns: 3% 12% auto 3%;
+  grid-template-rows: 3% auto 3%;
+  grid-template-areas:
+    ". . . ."
+    ". . header ."
+    ". main main ."
+    ". . footertitle ."
+    ". . footer ."
+    ". . . .";
+}
+
+
+/* -------  SUB GRID DEFINITION  ------- */
+
+.sideleft {
+  margin-top: 0;
+  margin-right: 3%;
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.middle {
+  border-top: 3px solid #7d97ad;
+}
+
+
+/* ------- HEADER DEFINITION  ------- */
+
+.logo-container {
+  flex: 0 1 auto;
+  margin: 0 0 5% 0;
+}
+
+.logo {
+  height: 15vmin;
+  position: relative;
+}
+
+.namerole {
+  width: 65%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.name {
+  order: 1;
+  font: 300 5.2vmax "Lato", sans-serif;
+  color: #000;
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+.role {
+  order: 2;
+  font: 400 1.75vmax "Lato", sans-serif;
+  color: #000;
+  align-self: flex-end;
+  position: relative;
+}
+
+
+/* -------  LEFT SIDEBAR DEFINITION  ------- */
+
+.square {
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.color-text {
+  line-height: 1.5;
+  font-family: "Lato", sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 2vh;
+  color: #7d97ad;
+}
+
+.blue {
+  background: #02b3e4;
+}
+
+.darkgray {
+  background: #2d3c49;
+}
+
+.lightgray {
+  background: #7d97ad;
+}
+
+
+/* -------  MAIN SECTION DEFINITION  ------- */
+
+.mainimage {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1%;
+}
+
+
+/* -------  FOOTER DEFINITION  ------- */
+
+.footer-title {
+  font: 400 2.5vmax "Lato", sans-serif;
+  color: #7d97ad;
+  margin-left: 9%;
+  padding-left: 1vw;
+}
+
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-left: 9%;
+}
+
+div.picture {
+  width: 27vw;
+  border: 1px solid #ccc;
+}
+
+div.picture:hover {
+  border: 1px solid #777;
+}
+
+div.picture img {
+  width: 27vw;
+  height: auto;
+}
+
+h4.description, p.description, div.description {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  padding: 5px;
+  overflow-wrap: break-word;
+}
+
+
+/* -------  MEDIA DEFINITIONS  ------- */
+
+@media only screen and (max-width: 1024px) {
+
+  .body-container {
+    grid-template-areas:
+      ". . . ."
+      ". header header ."
+      ". main main ."
+      ". footertitle footertitle ."
+      ". footer footer ."
+      ". . . .";
+  }
+
+  .grid-header {
+    margin: 0 0 3% -11%;
+  }
+
+  .grid-main {
+    grid-area: main;
+    height: auto;
+    display: flex;
+    flex-flow: column wrap;
+    margin-right: 0;
+  }
+
+  .footer-title-div {
+    margin-left: -10%;
+  }
+
+  footer {
+    margin-left: 0;
+  }
+
+  .sideleft {
+    order:  2;
+    margin-top: 0;
+    margin-right: 0;
+    text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  .middle {
+    order:  1;
+  }
+
+  p.description {
+    font-size:  65%;
+  }
+
+  .color-text {
+    transform: rotate(-90deg) translateX(85%);
+    transform-origin: 100% 100%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+
+  footer {
+      flex-flow: column nowrap;
+      align-items: center;
+  }
+
+  .footer-title-div {
+      text-align: center;
+  }
+
+}
